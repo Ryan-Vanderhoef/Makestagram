@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LJl-58-pF0">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <scenes>
+        <!--Dashboard-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="NotesViewController" customModule="MakeSchoolNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="77" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gQp-g6-lum">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NoteCell" rowHeight="70" id="R8c-xB-GRF" customClass="NoteTableViewCell" customModule="MakeSchoolNotes" customModuleProvider="target">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R8c-xB-GRF" id="kuZ-c5-D5a">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="February, 22, 2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6Q-D5-AjD">
+                                                    <rect key="frame" x="8" y="36" width="113" height="21"/>
+                                                    <fontDescription key="fontDescription" name="GillSans-Italic" family="Gill Sans" pointSize="13"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wondering how I should implement this" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKO-tK-oj4">
+                                                    <rect key="frame" x="8" y="15" width="303" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="N6Q-D5-AjD" id="8lq-HU-Hd1"/>
+                                            <outlet property="titleLabel" destination="tKO-tK-oj4" id="TPh-kz-vTK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <searchBar contentMode="center" searchBarStyle="prominent" placeholder="Search" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ge-wv-n7v">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="backgroundColor" red="0.74117648599999997" green="0.74117648599999997" blue="0.76470589639999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="1PQ-j2-Pru"/>
+                                </constraints>
+                                <color key="tintColor" red="0.15686274509803921" green="0.32549019607843138" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Ihz-eO-1Zk"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gQp-g6-lum" firstAttribute="top" secondItem="3Ge-wv-n7v" secondAttribute="bottom" id="8gV-OS-CiZ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gQp-g6-lum" secondAttribute="bottom" id="9Fo-gX-LDj"/>
+                            <constraint firstItem="gQp-g6-lum" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Hnz-fJ-WfZ"/>
+                            <constraint firstAttribute="trailing" secondItem="3Ge-wv-n7v" secondAttribute="trailing" id="j2D-qM-LOR"/>
+                            <constraint firstAttribute="trailing" secondItem="gQp-g6-lum" secondAttribute="trailing" id="p79-Pa-bmC"/>
+                            <constraint firstItem="3Ge-wv-n7v" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wxC-im-aXM"/>
+                            <constraint firstItem="3Ge-wv-n7v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yXW-8d-uok"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Dashboard" id="7Br-C8-tpv">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="84d-fC-3lh">
+                            <connections>
+                                <segue destination="xlJ-oH-4n6" kind="presentation" identifier="" id="Ewf-VA-8xF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="3Ge-wv-n7v" id="QYh-3S-JWL"/>
+                        <outlet property="tableView" destination="gQp-g6-lum" id="UzB-q1-Pdp"/>
+                        <segue destination="UKD-om-2Jt" kind="show" identifier="ShowExistingNote" id="Nig-wg-5Jb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042" y="430"/>
+        </scene>
+        <!--New Note View Controller-->
+        <scene sceneID="8Za-hM-G41">
+            <objects>
+                <viewController id="xlJ-oH-4n6" customClass="NewNoteViewController" customModule="MakeSchoolNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T3y-kb-1Gf"/>
+                        <viewControllerLayoutGuide type="bottom" id="CaW-cO-1Wu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bMm-Mx-Qra">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8cI-vj-eAc">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="BAk-q4-fBg"/>
+                                    <constraint firstAttribute="height" constant="64" id="wQv-YE-ted"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="New Note" id="bDN-Ew-hse">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="CFg-UM-ksZ">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="custom" customClass="DismissSegue" id="ruy-SN-d3m"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Save" id="pl1-MP-3sa">
+                                            <connections>
+                                                <action selector="saveButtonTapped:" destination="xlJ-oH-4n6" id="8cd-Uk-fl2"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="BAk-q4-fBg"/>
+                                    </mask>
+                                </variation>
+                            </navigationBar>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xyV-bg-u7R">
+                                <rect key="frame" x="0.0" y="65" width="600" height="535"/>
+                                <connections>
+                                    <segue destination="UKD-om-2Jt" kind="embed" identifier="ShowNewNote" id="VXM-6I-n4U"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8cI-vj-eAc" firstAttribute="top" secondItem="bMm-Mx-Qra" secondAttribute="top" id="2Rz-Nt-LsZ"/>
+                            <constraint firstAttribute="trailing" secondItem="8cI-vj-eAc" secondAttribute="trailing" id="6YV-v7-4SU"/>
+                            <constraint firstItem="xyV-bg-u7R" firstAttribute="top" secondItem="8cI-vj-eAc" secondAttribute="bottom" constant="1" id="FmK-vF-4GC"/>
+                            <constraint firstItem="CaW-cO-1Wu" firstAttribute="top" secondItem="xyV-bg-u7R" secondAttribute="bottom" id="L9K-lf-EdX"/>
+                            <constraint firstAttribute="trailing" secondItem="xyV-bg-u7R" secondAttribute="trailing" id="NSa-Xb-AJy"/>
+                            <constraint firstItem="xyV-bg-u7R" firstAttribute="leading" secondItem="bMm-Mx-Qra" secondAttribute="leading" id="ntZ-Cc-kfu"/>
+                            <constraint firstItem="8cI-vj-eAc" firstAttribute="leading" secondItem="bMm-Mx-Qra" secondAttribute="leading" id="ymy-6y-m9M"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="deB-sh-ZWn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1107" y="-319"/>
+        </scene>
+        <!--Note Display View Controller-->
+        <scene sceneID="XRR-fc-H55">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="UKD-om-2Jt" customClass="NoteDisplayViewController" customModule="MakeSchoolNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MBJ-DX-YH5"/>
+                        <viewControllerLayoutGuide type="bottom" id="lUB-SN-NMj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kE8-m8-UkZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="na5-ZJ-wHZ">
+                                <rect key="frame" x="0.0" y="20" width="600" height="536"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8yw-Rz-kjN">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="889"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Note title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7kb-lB-qmE">
+                                                <rect key="frame" x="16" y="20" width="568" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="pix-F8-8SA"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="UKD-om-2Jt" id="vZf-6G-CsL"/>
+                                                </connections>
+                                            </textField>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcP-N7-I5s" customClass="TextView" customModule="ConvenienceKit">
+                                                <rect key="frame" x="16" y="54" width="568" height="835"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="zlD-N8-Fwz"/>
+                                                </constraints>
+                                                <inset key="scrollIndicatorInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                                                <string key="text">Programming Test
+Work on Summer Academy Curriculum
+
+
+https://makegameswithus.hackpad.com/MGWU-Readiness-Test-PuQBuYXOJ4A
+
+
+T9R53ACA
+You can also enter the sale from a button at the top of the ticket page, though you'll need to enter your unique code, which is: T9R53ACA.
+As a back up you can also access the sale (and your code) from your Burner Profile, but be forwarned that this system cannot support the volume of all our ticket buyers.
+During the purchase process you will be prompted to either log in or create a new account in the Ticketfly system. You can create your account now or during the sale process. You may already of the world? Here's a handy timezone converter.
+
+Programming Test
+Work on Summer Academy Curriculum
+
+
+https://makegameswithus.hackpad.com/MGWU-Readiness-Test-PuQBuYXOJ4A
+
+
+T9R53ACA
+You can also enter the sale from a button at the top of the ticket page, though you'll need to enter your unique code, which is: T9R53ACA.
+As a back up you can also access the sale (and your code) from your Burner Profile, but be forwarned that this system cannot support the volume of all our ticket buyers.
+During the purchase process you will be prompted to either log in or create a new account in the Ticketfly system. You can create your account now or during the sale process. You may already have an account if you've ever bought a ticket to another event through Ticketfly, but please make sure that the email address on your Ticketfly account matches your Burner Profile.
+
+While you are buying tickets you will also have an opportunity to make an additional donation to help support Burning Man culture year-round.
+
+If you have questions about your order, please email us at ticketsupport@burningman.com
+
+See you in the Individual Sale!
+
+Burning Man Tickets
+
+*Clicking the link before 12pm (noon) PST on Wednesday, February 18 will  only give you a "code invalid" error message, so try to be patient and wait for noon. Not certain when 12pm PST is in your corner of the world? Here's a handy timezone converter.
+
+</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="textContainer.lineFragmentPadding">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderTextColor">
+                                                        <color key="value" red="0.76078431372549016" green="0.76078431372549016" blue="0.7803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="zlD-N8-Fwz"/>
+                                                    </mask>
+                                                </variation>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="8Ug-ZA-o5R"/>
+                                            <constraint firstItem="KcP-N7-I5s" firstAttribute="leading" secondItem="8yw-Rz-kjN" secondAttribute="leading" constant="16" id="HLN-Kt-7MF"/>
+                                            <constraint firstItem="KcP-N7-I5s" firstAttribute="top" secondItem="7kb-lB-qmE" secondAttribute="bottom" constant="10" id="Mw6-lj-Yig"/>
+                                            <constraint firstAttribute="trailing" secondItem="KcP-N7-I5s" secondAttribute="trailing" constant="16" id="NIp-fG-QU6"/>
+                                            <constraint firstAttribute="bottom" secondItem="KcP-N7-I5s" secondAttribute="bottom" id="OZg-35-wix"/>
+                                            <constraint firstItem="7kb-lB-qmE" firstAttribute="top" secondItem="8yw-Rz-kjN" secondAttribute="top" constant="20" id="Qr8-L1-ikv"/>
+                                            <constraint firstAttribute="trailing" secondItem="7kb-lB-qmE" secondAttribute="trailing" constant="16" id="TRJ-ws-Fcw"/>
+                                            <constraint firstItem="7kb-lB-qmE" firstAttribute="leading" secondItem="8yw-Rz-kjN" secondAttribute="leading" constant="16" id="oO2-Ww-oQB"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="8Ug-ZA-o5R"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="8yw-Rz-kjN" firstAttribute="top" secondItem="na5-ZJ-wHZ" secondAttribute="top" id="34J-7e-vgP"/>
+                                    <constraint firstAttribute="bottom" secondItem="8yw-Rz-kjN" secondAttribute="bottom" id="Box-XS-69t"/>
+                                    <constraint firstItem="8yw-Rz-kjN" firstAttribute="top" secondItem="na5-ZJ-wHZ" secondAttribute="top" id="JjG-aB-f2R"/>
+                                    <constraint firstAttribute="trailing" secondItem="8yw-Rz-kjN" secondAttribute="trailing" id="QDS-0d-kZj"/>
+                                    <constraint firstItem="8yw-Rz-kjN" firstAttribute="leading" secondItem="na5-ZJ-wHZ" secondAttribute="leading" id="a2d-9K-Ucp"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="34J-7e-vgP"/>
+                                    </mask>
+                                </variation>
+                            </scrollView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xpj-3K-BVH">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="T05-sr-S9B"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="trash" id="5hd-gI-aly">
+                                        <connections>
+                                            <action selector="deleteButtonTapped:" destination="UKD-om-2Jt" id="naW-hG-PLr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xpj-3K-BVH" firstAttribute="leading" secondItem="kE8-m8-UkZ" secondAttribute="leading" id="4b4-eR-Dbp"/>
+                            <constraint firstItem="na5-ZJ-wHZ" firstAttribute="top" secondItem="MBJ-DX-YH5" secondAttribute="bottom" id="IQh-dd-kWV"/>
+                            <constraint firstItem="na5-ZJ-wHZ" firstAttribute="top" secondItem="MBJ-DX-YH5" secondAttribute="bottom" id="IVx-5C-yVB"/>
+                            <constraint firstItem="na5-ZJ-wHZ" firstAttribute="leading" secondItem="kE8-m8-UkZ" secondAttribute="leading" id="JmG-XP-sQQ"/>
+                            <constraint firstItem="8yw-Rz-kjN" firstAttribute="width" secondItem="kE8-m8-UkZ" secondAttribute="width" id="KJ3-Rl-VrB"/>
+                            <constraint firstItem="na5-ZJ-wHZ" firstAttribute="width" secondItem="kE8-m8-UkZ" secondAttribute="width" id="c21-kI-iVS"/>
+                            <constraint firstAttribute="trailing" secondItem="na5-ZJ-wHZ" secondAttribute="trailing" id="kVX-cq-ghU"/>
+                            <constraint firstItem="xpj-3K-BVH" firstAttribute="top" secondItem="na5-ZJ-wHZ" secondAttribute="bottom" id="lJv-7a-z3N"/>
+                            <constraint firstItem="lUB-SN-NMj" firstAttribute="top" secondItem="xpj-3K-BVH" secondAttribute="bottom" id="mcL-Da-pOY"/>
+                            <constraint firstAttribute="trailing" secondItem="xpj-3K-BVH" secondAttribute="trailing" id="tzn-up-F1y"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="IVx-5C-yVB"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="contentTextView" destination="KcP-N7-I5s" id="CLy-z9-GU9"/>
+                        <outlet property="deleteButton" destination="5hd-gI-aly" id="fhZ-YI-rmy"/>
+                        <outlet property="titleTextField" destination="7kb-lB-qmE" id="Qac-Lj-qLZ"/>
+                        <outlet property="toolbarBottomSpace" destination="mcL-Da-pOY" id="quL-jn-dvt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rVP-df-BEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2187" y="131.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fhJ-Rm-Rzw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LJl-58-pF0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="X6g-Lj-Rbl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="xnh-BP-VJB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Qc-mJ-2eb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="301" y="430"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ruy-SN-d3m"/>
+        <segue reference="Nig-wg-5Jb"/>
+    </inferredMetricsTieBreakers>
+</document>
