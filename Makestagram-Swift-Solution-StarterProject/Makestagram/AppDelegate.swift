@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
+    
+    // Set up the Parse SDK
+    Parse.setApplicationId("MWSaonX8i9sUzWfbFzfMP60gupvPoh5Euq86z6cd", clientKey: "1ODrGV7AqssWcgC9TPCvhv6ldKo62XdrK3Z29Rp9")
+    
+    PFUser.logInWithUsername("test", password: "test")
+    if let user = PFUser.currentUser() {
+        println("Log in successful")
+    } else {
+        println("No logged in user :(")
+    }
     
     return true
   }
