@@ -48,6 +48,7 @@
 		E9BEBB5B1B3C72050047FE53 /* FriendSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BEBB5A1B3C72050047FE53 /* FriendSearchViewController.swift */; };
 		E9BEBB641B3C79450047FE53 /* PhotoTakingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BEBB631B3C79450047FE53 /* PhotoTakingHelper.swift */; };
 		E9BEBB671B3DB5890047FE53 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BEBB661B3DB5890047FE53 /* Posts.swift */; };
+		E9BEBB6F1B3DCC990047FE53 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BEBB6E1B3DCC990047FE53 /* PostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -191,6 +192,7 @@
 		E9BEBB5A1B3C72050047FE53 /* FriendSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSearchViewController.swift; sourceTree = "<group>"; };
 		E9BEBB631B3C79450047FE53 /* PhotoTakingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTakingHelper.swift; sourceTree = "<group>"; };
 		E9BEBB661B3DB5890047FE53 /* Posts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
+		E9BEBB6E1B3DCC990047FE53 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,6 +345,7 @@
 		62C8C1E21B06BD6500DC3EA7 /* Makestagram */ = {
 			isa = PBXGroup;
 			children = (
+				E9BEBB6C1B3DCC820047FE53 /* Views */,
 				E9BEBB651B3DB5650047FE53 /* Models */,
 				E9BEBB621B3C79140047FE53 /* PhotoTaking */,
 				6277189C1B0A58E800AF5C6E /* Helpers */,
@@ -396,6 +399,22 @@
 				E9BEBB661B3DB5890047FE53 /* Posts.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E9BEBB6C1B3DCC820047FE53 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E9BEBB6D1B3DCC820047FE53 /* Timeline */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E9BEBB6D1B3DCC820047FE53 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				E9BEBB6E1B3DCC990047FE53 /* PostTableViewCell.swift */,
+			);
+			path = Timeline;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -587,6 +606,7 @@
 				E9BEBB591B3C71EF0047FE53 /* PhotoViewController.swift in Sources */,
 				62C8C1E61B06BD6500DC3EA7 /* AppDelegate.swift in Sources */,
 				627718971B0A581700AF5C6E /* FilterViewController.swift in Sources */,
+				E9BEBB6F1B3DCC990047FE53 /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
