@@ -8,12 +8,15 @@
 
 import Foundation
 import Parse
+import Bond
 
 // 1 - Inherit from PFObject, and mplement PFSubclassing protocol
 class Post : PFObject, PFSubclassing {
     
-    var image: UIImage?
+    var image: Dynamic<UIImage?> = Dynamic(nil)
     var photoUploadTask: UIBackgroundTaskIdentifier?
+    var likes =  Dynamic<[PFUser]?>(nil)    // dynamic, optional arry of PFUsers
+
     
     // 2 - Define each property you want to access in Parse class
     @NSManaged var imageFile: PFFile?
@@ -41,7 +44,7 @@ class Post : PFObject, PFSubclassing {
     }
     
     func uploadPost() {
-        let imageData = UIImageJPEGRepresentation(image, 0.8)
+        let imageData = UIImageJPEGRepresentation(image.value, 0.8)
         let imageFile = PFFile(data: imageData)
         
         // 1
@@ -61,6 +64,62 @@ class Post : PFObject, PFSubclassing {
         saveInBackgroundWithBlock(nil)
     }
     
+    func downloadImage() {
+        // if image is not downloaded yet, get it
+        // 1
+        if (image.value == nil) {
+            // 2
+            imageFile?.getDataInBackgroundWithBlock { (data: NSData?, error: NSError?) -> Void in
+                if let data = data {
+                    let image = UIImage(data: data, scale:1.0)!
+                    // 3
+                    self.image.value = image
+                }
+            }
+        }
+    }
     
+    func fetchLikes() {
+        // 1
+        if (likes.value != nil) {
+            return
+        }
+        
+        // 2 - fetch the likes of the current post
+        ParseHelper.likesForPost(self, completionBlock: { (var likes: [AnyObject]?, error: NSError?) -> Void in
+            // 3 - remove any likes from users that have deleted their accounts
+            likes = likes?.filter { like in like[ParseHelper.ParseLikeFromUser] != nil }
+            
+            // 4 - replace the likes in the array with users that are associated with each like
+            self.likes.value = likes?.map { like in
+                let like = like as! PFObject
+                let fromUser = like[ParseHelper.ParseLikeFromUser] as! PFUser
+                
+                return fromUser
+            }
+        })
+    }
+    
+    func doesUserLikePost(user: PFUser) -> Bool {
+        if let likes = likes.value {
+            return contains(likes, user)
+        } else {
+            return false
+        }
+    }
+    
+    func toggleLikePost(user: PFUser) {
+        if (doesUserLikePost(user)) {
+            // if image is liked, unlike it now
+            // 1 - remove the user from the local cache stored in the likes property, then sync change with Parse
+            likes.value = likes.value?.filter { $0 != user }
+            ParseHelper.unlikePost(user, post: self)
+        } else {
+            // if this image is not liked yet, like it now
+            // 2 - add user to the local cache, then sync change with Parse
+            likes.value?.append(user)
+            ParseHelper.likePost(user, post: self)
+        }
+    }
     
 }
