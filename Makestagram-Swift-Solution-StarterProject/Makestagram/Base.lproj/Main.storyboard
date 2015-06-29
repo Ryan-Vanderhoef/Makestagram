@@ -152,6 +152,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="VQu-n7-ncr" id="ydB-AP-uLh"/>
+                                    <outlet property="delegate" destination="VQu-n7-ncr" id="jqV-cd-fWR"/>
                                 </connections>
                             </tableView>
                         </subviews>
