@@ -48,6 +48,11 @@ class TimelineViewController: UIViewController, TimelineComponentTarget {
         // 1
         ParseHelper.timelineRequestforCurrentUser(range) {
             (result: [AnyObject]?, error: NSError?) -> Void in
+            
+            if let error = error {
+                ErrorHandling.defaultErrorHandler(error)
+            }
+            
             // 2
             let posts = result as? [Post] ?? []
             // 3
