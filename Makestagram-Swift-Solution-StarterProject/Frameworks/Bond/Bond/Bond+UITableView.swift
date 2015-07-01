@@ -46,17 +46,17 @@ extension NSIndexSet {
     super.init()
   }
   
-  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return self.dynamic?.count ?? 0
-  }
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return self.dynamic?.count ?? 0
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.dynamic?[section].count ?? 0
+    }
   
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return self.dynamic?[section].count ?? 0
-  }
-  
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    return self.dynamic?[indexPath.section][indexPath.item] ?? UITableViewCell()
-  }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+         return self.dynamic?[indexPath.section][indexPath.item] ?? UITableViewCell()
+    }
   
   // Forwards
   
