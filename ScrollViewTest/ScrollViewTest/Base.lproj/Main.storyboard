@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D2134" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ScrollViewTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F6X-kg-mGL"/>
+                        <viewControllerLayoutGuide type="bottom" id="4u1-47-LCJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6tM-bv-IId">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJ4-wi-gar">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Uo-MC-ZcK">
+                                        <rect key="frame" x="43" y="28" width="536" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qem-W6-HZC">
+                                        <rect key="frame" x="43" y="77" width="528" height="473"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="528" id="d7T-pZ-YAo"/>
+                                            <constraint firstAttribute="height" constant="473" id="naz-8h-9b1"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="qem-W6-HZC" secondAttribute="bottom" constant="30" id="5GC-Y1-uT1"/>
+                                    <constraint firstItem="6Uo-MC-ZcK" firstAttribute="top" secondItem="nJ4-wi-gar" secondAttribute="top" constant="28" id="N8E-NZ-547"/>
+                                    <constraint firstItem="6Uo-MC-ZcK" firstAttribute="leading" secondItem="nJ4-wi-gar" secondAttribute="leading" constant="43" id="NBu-gg-xuL"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Uo-MC-ZcK" secondAttribute="trailing" constant="21" id="SHv-7s-iJk"/>
+                                    <constraint firstItem="qem-W6-HZC" firstAttribute="top" secondItem="6Uo-MC-ZcK" secondAttribute="bottom" constant="19" id="c6b-C7-tAz"/>
+                                    <constraint firstItem="qem-W6-HZC" firstAttribute="leading" secondItem="6Uo-MC-ZcK" secondAttribute="leading" id="ozt-SX-agC"/>
+                                    <constraint firstAttribute="trailing" secondItem="qem-W6-HZC" secondAttribute="trailing" constant="29" id="yxa-SD-fQV"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nJ4-wi-gar" firstAttribute="leading" secondItem="6tM-bv-IId" secondAttribute="leading" id="ACb-zU-4kI"/>
+                            <constraint firstAttribute="trailing" secondItem="nJ4-wi-gar" secondAttribute="trailing" id="Fij-Td-nvQ"/>
+                            <constraint firstItem="nJ4-wi-gar" firstAttribute="top" secondItem="F6X-kg-mGL" secondAttribute="bottom" id="H9w-DM-3bJ"/>
+                            <constraint firstItem="nJ4-wi-gar" firstAttribute="bottom" secondItem="4u1-47-LCJ" secondAttribute="top" id="NXi-JE-tFL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="6Uo-MC-ZcK" id="Rtz-1w-xSJ"/>
+                        <outlet property="textView" destination="qem-W6-HZC" id="oy3-sh-Wlh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

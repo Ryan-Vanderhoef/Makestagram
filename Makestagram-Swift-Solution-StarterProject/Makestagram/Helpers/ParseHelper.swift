@@ -109,7 +109,7 @@ class ParseHelper {
     */
     static func getFollowingUsersForUser(user: PFUser, completionBlock: PFArrayResultBlock) {
         let query = PFQuery(className: ParseFollowClass)
-        
+        println("followers")
         query.whereKey(ParseFollowFromUser, equalTo:user)
         query.findObjectsInBackgroundWithBlock(completionBlock)
     }

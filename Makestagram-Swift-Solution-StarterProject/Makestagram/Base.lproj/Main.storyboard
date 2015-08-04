@@ -262,7 +262,7 @@
                                                 <constraint firstAttribute="centerY" secondItem="1tY-6l-5iQ" secondAttribute="centerY" id="fQ3-dV-0nc"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="postTimeLabel" destination="jHj-kY-5jN" id="OoR-Pa-AGA"/>
                                             <outlet property="usernameLabel" destination="f3G-td-DmN" id="izX-gN-0ze"/>
@@ -303,6 +303,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="VQu-n7-ncr" kind="relationship" relationship="viewControllers" id="3Nw-1v-Fwk"/>
