@@ -103,7 +103,7 @@
 		E90249E61B67F41300A8B286 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		E90249E71B67F41300A8B286 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		E90249E81B67F41300A8B286 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		E915F9F91B557F93007D9A52 /* Antlers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Antlers.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E915F9F91B557F93007D9A52 /* AppIdea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppIdea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E915F9FD1B557F93007D9A52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E915F9FE1B557F93007D9A52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E915FA081B557F93007D9A52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -217,7 +217,7 @@
 		E915F9FA1B557F93007D9A52 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E915F9F91B557F93007D9A52 /* Antlers.app */,
+				E915F9F91B557F93007D9A52 /* AppIdea.app */,
 				E915FA0E1B557F93007D9A52 /* AppIdeaTests.xctest */,
 			);
 			name = Products;
@@ -373,7 +373,7 @@
 			);
 			name = AppIdea;
 			productName = AppIdea;
-			productReference = E915F9F91B557F93007D9A52 /* Antlers.app */;
+			productReference = E915F9F91B557F93007D9A52 /* AppIdea.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E915FA0D1B557F93007D9A52 /* AppIdeaTests */ = {
@@ -653,8 +653,9 @@
 					"$(PROJECT_DIR)/AppIdea/ConvenienceKit/Frameworks",
 				);
 				INFOPLIST_FILE = AppIdea/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = Antlers;
+				PRODUCT_NAME = AppIdea;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "AppIdea/AppIdea-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -705,8 +706,9 @@
 					"$(PROJECT_DIR)/AppIdea/ConvenienceKit/Frameworks",
 				);
 				INFOPLIST_FILE = AppIdea/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = Antlers;
+				PRODUCT_NAME = AppIdea;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "AppIdea/AppIdea-Bridging-Header.h";
 			};
@@ -716,6 +718,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -725,6 +728,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = AppIdeaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = AppIdeaTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppIdea.app/AppIdea";
@@ -735,11 +739,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = AppIdeaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = AppIdeaTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppIdea.app/AppIdea";
